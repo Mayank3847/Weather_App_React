@@ -1,0 +1,146 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.weather-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.weather-card:hover {
+  transform: scale(1.02);
+}
+
+
+.weather-info {
+  margin-top: 15px;
+}
+
+.weather-info h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+  word-break: break-word;
+}
+
+.weather-info p {
+  font-size: 1rem;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.forecast-day {
+  flex: 1 1 100px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  min-width: 100px;
+  max-width: 140px;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+.forecast-day:hover {
+  transform: translateY(-4px);
+  box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles for all screens from 250px width and 300px height upward */
+@media (max-width: 1040px), (max-height: 1040px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .weather-card {
+    max-width: 95%;
+    padding: 16px;
+    margin: 20px auto;
+    border-radius: 12px;
+  }
+  .weather-info h1 {
+    font-size: 1.4rem;
+  }
+  .weather-info p {
+    font-size: 0.9rem;
+  }
+  .forecast-day {
+    min-width: 80px;
+    max-width: 100px;
+    padding: 8px;
+  }
+}
+
+/* Very small height handling */
+@media (max-height: 600px) {
+  .container {
+    align-items: flex-start;
+    padding-top: 10px;
+    height: auto;
+  }
+  .weather-card {
+    margin: 20px auto;
+  }
+}
+
+/* Larger height adjustments */
+@media (min-height: 1600px) {
+  .container {
+    padding: 80px 20px;
+  }
+}
+
+@media (min-height: 2160px) {
+  .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .weather-card {
+    margin: auto;
+  }
+}
+
+/* Wider screens */
+@media (min-width: 1440px) {
+  .weather-card {
+    max-width: 600px;
+    padding: 30px;
+  }
+  .forecast-day {
+    max-width: 180px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    padding: 60px;
+  }
+  .weather-card {
+    max-width: 720px;
+    padding: 40px;
+  }
+  .forecast-day {
+    max-width: 200px;
+  }
+}
