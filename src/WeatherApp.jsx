@@ -23,16 +23,16 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import axios from "axios";
 
 import coldSunnyDay from "./assets/cold-sunny-day.avif";
-import hotSunnyDay from "./assets/hot-sunny-day.jpeg";
+import hotSunnyDay from "./assets/hot-sunny-day.jpg";
 import sunnyDay from "./assets/sunny-day.jpg";
 import clearNight from "./assets/clear-night.jpg";
 import coldClearNight from "./assets/cold-clear-night.jpeg";
 import cloudyDay from "./assets/cloudy-day.jpg";
-import coldCloudyDay from "./assets/cold-cloudy-day.jpeg";
+import coldCloudyDay from "./assets/cold-cloudy-day.avif";
 import cloudyNight from "./assets/cloudy-night.webp";
 import rainyDay from "./assets/rainy-day.jpg";
 import rainyNight from "./assets/rainy-night.jpg";
-import snowyDay from "./assets/snowy-day.jpg";
+import snowyDay from "./assets/snowy-day.webp";
 import snowyNight from "./assets/snowy-night.jpg";
 import thunderDay from "./assets/thunder-day.jpg";
 import thunderNight from "./assets/thunder-night.jpeg";
@@ -405,7 +405,7 @@ const WeatherApp = () => {
                     overflow: "auto",
                     maxHeight: { xs: "200px", sm: "none" }
                   }}>
-                   {hourlyForecast.slice(0, isMobile ? 4 : 8).map((hour, idx) => (
+                  {hourlyForecast.slice(0, 8).map((hour, idx) => (
 
   <Card
   key={idx}
@@ -466,7 +466,8 @@ const WeatherApp = () => {
 >
                     {forecastLoading ? (
                       [...Array(5)].map((_, i) => <Skeleton key={i} height={140} variant="rectangular" />)
-                    ) : forecast.slice(0, isMobile ? 3 : 5).map((day, idx) => (
+                    ) : forecast.slice(0, 5).map((day, idx) => (
+
                       <Card
                       key={idx}
                       sx={{
